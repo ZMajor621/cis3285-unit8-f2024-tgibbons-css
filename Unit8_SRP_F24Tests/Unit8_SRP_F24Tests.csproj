@@ -16,7 +16,12 @@
 
   <ItemGroup>
     <EmbeddedResource Include="goodtrades.txt" />
+    <EmbeddedResource Include="goodtradeone.txt" />
+    <EmbeddedResource Include="tengoodtrades.txt" />
+    <EmbeddedResource Include="notrades.txt" />
     <EmbeddedResource Include="badtrade_neg_amount.txt" />
+    <EmbeddedResource Include="badtrade_few_val.txt" />
+    <EmbeddedResource Include="badtrade_neg_price.txt" />
   </ItemGroup>
 
   <ItemGroup>

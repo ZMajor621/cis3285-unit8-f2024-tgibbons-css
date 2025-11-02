@@ -53,11 +53,24 @@ namespace SingleResponsibilityPrinciple
                 LogMessage("WARN: Trade amount on line {0} not a valid integer: '{1}'", currentLine, fields[1]);
                 return false;
             }
+            //checks for negative or zero trade amount
+            if (tradeAmount <= 0)
+            {
+                LogMessage("WARN: Trade amount on line {0} not positive: '{1}'", currentLine, fields[1]);
+                return false;
+            }
 
             decimal tradePrice;
             if (!decimal.TryParse(fields[2], out tradePrice))
             {
                 LogMessage("WARN: Trade price on line {0} not a valid decimal: '{1}'", currentLine, fields[2]);
+                return false;
+            }
+
+            //checks for negative or zero trade price
+            if (tradePrice <= 0)
+            {
+                LogMessage("WARN: Trade price on line {0} not positive: '{1}'", currentLine, fields[2]);
                 return false;
             }
             return true;
